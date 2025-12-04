@@ -1,4 +1,4 @@
-public class KeywordDetector {
+public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
             "Our product will transform the market",
@@ -14,24 +14,20 @@ public class KeywordDetector {
             "Effective presentations must be clear, concise, and humble"
         };
 
-        // Keywords — EXACT as provided, including case
         String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
 
         detectAndPrint(sentences, keywords);
     }
 
-    // Prints any sentence and matching keyword, EXACT format
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int i = 0; i < sentences.length; i++) {
             String sentence = sentences[i];
 
             for (int j = 0; j < keywords.length; j++) {
-                String keyword = keywords[j];
-
-                if (sentence.contains(keyword)) {   // exact case-sensitive match
-                    System.out.println("Found keyword: " + keyword);
+                if (sentence.contains(keywords[j])) {
+                    System.out.println("Found keyword: " + keywords[j]);
                     System.out.println(sentence);
-                    System.out.println(); // empty line EXACTLY as tests expect
+                    System.out.println();
                 }
             }
         }
