@@ -1,4 +1,4 @@
-public class KeywordDetector{
+public class KeywordDetector {
     public static void main(String[] args) {
         String[] sentences = {
             "Our product will transform the market",
@@ -14,7 +14,7 @@ public class KeywordDetector{
             "Effective presentations must be clear, concise, and humble"
         };
 
-        String[] keywords = {"synergy", "disrupt", "leverage", "paradigm", "transform"};
+        String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
 
         detectAndPrint(sentences, keywords);
     }
@@ -22,12 +22,10 @@ public class KeywordDetector{
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int i = 0; i < sentences.length; i++) {
             String sentence = sentences[i];
-            String sentenceLower = sentence.toLowerCase();
             boolean found = false;
 
             for (int j = 0; j < keywords.length; j++) {
-                String keywordLower = keywords[j].toLowerCase();
-                if (sentenceLower.contains(keywordLower)) {
+                if (sentence.toLowerCase().contains(keywords[j].toLowerCase())) {
                     found = true;
                     break;
                 }
