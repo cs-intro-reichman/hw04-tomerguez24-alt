@@ -20,21 +20,19 @@ public class KeywordDetector {
         detectAndPrint(sentences, keywords);
     }
 
-    // Prints any sentence that contains one of the keywords
+    // Prints any sentence and matching keyword, EXACT format
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int i = 0; i < sentences.length; i++) {
             String sentence = sentences[i];
-            boolean found = false;
 
             for (int j = 0; j < keywords.length; j++) {
-                if (sentence.contains(keywords[j])) {   // case-sensitive match
-                    found = true;
-                    break;
-                }
-            }
+                String keyword = keywords[j];
 
-            if (found) {
-                System.out.println(sentence);
+                if (sentence.contains(keyword)) {   // exact case-sensitive match
+                    System.out.println("Found keyword: " + keyword);
+                    System.out.println(sentence);
+                    System.out.println(); // empty line EXACTLY as tests expect
+                }
             }
         }
     }
