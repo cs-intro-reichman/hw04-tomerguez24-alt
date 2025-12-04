@@ -14,18 +14,18 @@ public class KeywordDetector {
             "Effective presentations must be clear, concise, and humble"
         };
 
-        String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
+        String[] keyword = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
 
-        detectAndPrint(sentences, keywords);
+        detectAndPrint(sentences, keyword);
     }
 
-    public static void detectAndPrint(String[] sentences, String[] keywords) {
+    public static void detectAndPrint(String[] sentences, String[] keyword) {
         for (int i = 0; i < sentences.length; i++) {
             String sentence = sentences[i];
             boolean found = false;
 
-            for (int j = 0; j < keywords.length; j++) {
-                if (sentence.toLowerCase().contains(keywords[j].toLowerCase())) {
+            for (int j = 0; j < keyword.length; j++) {
+                if (sentence.toLowerCase().contains(keyword[j].toLowerCase())) {
                     found = true;
                     break;
                 }
