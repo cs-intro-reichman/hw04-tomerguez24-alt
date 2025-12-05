@@ -1,4 +1,4 @@
-public class KeywordDetector {
+public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
             "Our product will transform the market",
